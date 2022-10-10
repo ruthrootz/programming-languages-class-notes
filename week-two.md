@@ -1,0 +1,25 @@
+- lexical analysis
+    - scanner recognizes keywords, removes comments, notices variable names and literals, etc.
+    - it identifies tokens
+- syntax
+    - the parser knows the rules of the language, the structure of it and the order in which tokens/characters should show up
+    - the parser uses regular expressions and a context-free grammar to do the analyzing
+    - the context-free grammar generates strings in a language
+    - the parser recognizes strings in a language
+    - terminals in CFG: a "literal" value, not something that can be substituted, anything that __doesn't__ show up on the left side of a CFG expression
+    - non-terminals in CFG: the left side of a CFG expression
+- semantics
+    - what does the code mean?
+- pragmas: like preprocessors, they're executed during lexical analysis
+- context-free grammar
+    - it's a set of substitution rules
+    - it can either use left-most derivation, right-most derivation or neither
+    - the compiler uses a CFG to generate sentences during the syntax phase
+    - if a sentence can't be derived or there's an ambiguity (more than one version of the sentence can be derived), then a syntax error is thrown
+    - if there's ambiguity, then the CFG isn't precise enough
+- derivation
+    - lists each step of replacing non-terminals with terminals, given a CFG (the "rules") and an expression (the non-terminals that will be converted into a "sentence")
+    - the sentence is the expression of terminals that you want to end up with
+    - you start with one of the rules in the CFG and derive the desired sentence
+    - parse tree: each step is represented as branches in a tree; the root of the tree is the starting rule
+    - abstract syntax tree: a parse tree with non-terminals and redundancy removed
