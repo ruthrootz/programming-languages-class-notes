@@ -1,3 +1,48 @@
-## types of programming languages
-
-
+- types of programming languages
+    - imperative / procedural (Java, C, etc.)
+        - imperative languages are for OOP
+        - procedural languages are for "step-by-step" programs
+    - functional (Scheme, Pascal, F#)
+        - you need to use recursion in order to implement loops
+        - no variables, just functions
+        - algorithms, math-based programs
+    - logic (Prolog)
+        - there are rules and facts
+    - markup (HTML, XSLT)
+- when designing programming language
+    - computer architecture
+        - von Neumann architecture leads to imperative languages
+    - design methodologies
+        - OOP (Java), structured (C), etc.
+        - data and programs stored in memory, instructions eventually get executed in CPU
+        - fetch-execution lifecycle
+- programming language paradigms: OOP, functional, procedural, declarative, etc.
+- lambda: passing code into a function, a functional language concept
+- implementation methods: how to translate from code to running program
+    - compilation
+        - translation into machine language
+        - includes [[JIT]] systems
+            - speeds up compilation
+            - programs are translated into subprograms in an intermediate language and then translated into machine code when each little subprogram is called
+            - JIT is often used for Java
+            - .NET uses JIT implementation
+        - phases of compilation
+            - preprocessing: (C uses this)
+                - the preprocessor generates instructions (macros) that help speed up compilation
+                - C's `#include` and `#define` are preprocessor commands
+            - lexical analysis (scanner): characters are converted into lexical units, looks at code and groups statements into tokens using regular expressions
+                - reads characters -> groups characters into tokens
+                - tokens are the smallest meaningful tokens of a program
+            - syntax analysis (parser): lexical units are converted into parse trees with represent the structure of the program, makes sure the order of the program is correct
+                - the compiler hands a grammar to the parser, and the parser looks at the code and tries to match it up with the grammar; if it doesn't match, then a syntax error gets thrown
+            - semantics analysis: intermediate code is created
+            - code generation: machine code is created
+    - interpretation
+        - another program interprets the code as it runs
+        - super slow so only good for small programs
+        - no data or syntax checking, so you'll only encounter errors during runtime
+        - PHP and JavaScript are examples of interpreted languages
+    - hybrid
+        - Java code is compiled into byte code
+        - and then it is interpreted by the JVM
+        - there is a JVM for any OS you want to use, so you can run any Java program on any machine with the JVM installed
