@@ -1,0 +1,46 @@
+- abstraction
+    - aids in ease of coding
+    - machine independence
+    - naming: identifiers (variable names, operators, keywords, types, etc.), subroutines (control abstractions), classes (data abstractions)
+        - semantics comes from naming
+        - names denote language entities, data, control constructs
+- [[lifetime]] of an object: the lifetime of an object is how long it exists in memory, how long the memory is allocated
+    - static object: a static object is in scope for the duration of run time
+    - stack object: a stack object lives on the stack so it's only usable when it's in scope
+    - heap objects: heap objects live in memory and can be referenced as long as a variable exists with a reference to the memory address
+- [[lifetime]] of a [[binding]]: the time that a name is bound to the memory where the object is located
+    - seven types of binding times (time time when a name is identified with some meaning)
+        - language design time: associating keywords with meaning (types, if statements)
+        - language implementation time: precision of types, run-time exception throwing, max memory sizes
+        - program writing time: algorithms, data structures, names
+        - compile time: mapping constructs to machine code, creating statically defined data in memory
+        - link time: layout of modules, resolution of inter-module references, importing code
+        - load time: virtual memory references into physical addresses
+        - run time: binding of values to variables
+    - static/early binding: binding that happens during compile time
+    - dynamic/late binding: binding that happens during run time
+    - the earlier binding is done the more efficient the code it, and the later it is done the more flexible the code is
+- [[scope]]: an object is in scope when it can be referenced, when the name-object bindings are usable
+    - static scoping: the scope is determined by the text of the code, where the variable is in the code, which block it's in
+        - in C, variables can be marked `static` and they will retain their value (binding) each time they're in scope
+        - less run time overhead
+        - can do type checking
+        - better readability
+    - dynamic scoping: the scope is determined by the flow of the program
+        - last assignment of data is the one that "wins"
+        - hard to read and understand what variable is assigned what value
+        - variable access is hard to control since everything is available everywhere
+        - high run time cost, not efficient
+        - languages with dynamic scoping tend to be interpreted
+        - type and argument checking are done at run time
+    - referencing environment: this is all the names that can be referenced in the current scope
+- aliasing: more than one identifier bound to an object
+    - name resolution: when there are multiple names (aliases) bound to the same thing (function, object, etc.), which object gets resolved or which function gets invoked?
+- overloading: the same identifier referencing more than one object (in the given scope)
+    - coercion: when a language changes the type of a variable
+    - promotion: changing a variable type into a type with more memory/precision (e.g. int to float)
+    - truncation: changing a variable type into a type with less memory/precision
+- two types of polymorphism
+    - overriding: run time, subclasses with methods with different behavior, inheritance
+    - overloading: "parametric", compile time, includes use of generics (different types but the same behavior), same name but different behavior / argument types
+- declaration vs. definition: a declaration declares a name and type (and arguments, in the case of a function) of a variable/function but doesn't have to be assigned a value or have an implementation; a definition is where the variable is actually given a value and where the function is given an implementation
